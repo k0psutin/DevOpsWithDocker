@@ -1,0 +1,19 @@
+k0psutin@k0psutin:~$ sudo docker stop 6c3
+6c3
+k0psutin@k0psutin:~$ sudo docker rm --force 6c3
+6c3
+k0psutin@k0psutin:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+k0psutin@k0psutin:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        6 months ago        1.84kB
+k0psutin@k0psutin:~$ sudo docker rmi hello-world
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:41a65640635299bab090f783209c1e3a3f11934cf7756b09cb2f1e02147c6ed8
+Deleted: sha256:fce289e99eb9bca977dae136fbe2a82b6b7d4c372474c9235adc1741675f587e
+Deleted: sha256:af0b15c8625bb1938f1d7b17081031f649fd14e6b233688eea3c5483994a66a3
+k0psutin@k0psutin:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+k0psutin@k0psutin:~$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+k0psutin@k0psutin:~$ 
