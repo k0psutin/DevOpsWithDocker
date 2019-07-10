@@ -1,0 +1,14 @@
+k0psutin@k0psutin:~/Documents/DevOps/practice$ mkdir logs
+k0psutin@k0psutin:~/Documents/DevOps/practice$ touch logs.txt
+k0psutin@k0psutin:~/Documents/DevOps/practice$ sudo docker run -v $(pwd)/logs/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+(node:1) ExperimentalWarning: The fs.promises API is experimental
+Wrote to file /usr/app/logs.txt
+Wrote to file /usr/app/logs.txt
+...
+k0psutin@k0psutin:~/Documents/DevOps/practice/logs$ tail logs.txt
+Wed, 10 Jul 2019 15:15:16 GMT
+Wed, 10 Jul 2019 15:15:19 GMT
+Wed, 10 Jul 2019 15:15:22 GMT
+Wed, 10 Jul 2019 15:15:25 GMT
+Secret message is:
+"Volume bind mount is easy"
