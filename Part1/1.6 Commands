@@ -1,0 +1,16 @@
+k0psutin@k0psutin:~/Documents/DevOps/practice$ sudo docker build -t docker-clock .
+[sudo] password for k0psutin: 
+Sending build context to Docker daemon  2.048kB
+Step 1/2 : FROM devopsdockeruh/overwrite_cmd_exercise
+ ---> 0f7f459b76c9
+Step 2/2 : CMD ["-c"]
+ ---> Running in 55da49b8a673
+Removing intermediate container 55da49b8a673
+ ---> 86fee4698137
+Successfully built 86fee4698137
+Successfully tagged docker-clock:latest
+k0psutin@k0psutin:~/Documents/DevOps/practice$ sudo docker run docker-clock
+1
+2
+3
+...
