@@ -1,0 +1,8 @@
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker$ mkdir logs
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker$ cd logs
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker/logs$ touch logs.txt
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker/logs$ cd ..
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker$ sudo docker build -t backend .
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker$ sudo docker run -p 8000:8000 -v $(pwd)/logs/logs.txt:/app/logs.txt backend
+k0psutin@k0psutin:~/Documents/DevOps/practice/backend-example-docker/logs$ tail logs.txt
+7/10/2019, 5:46:21 PM: Connection received in root
