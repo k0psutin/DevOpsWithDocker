@@ -1,0 +1,9 @@
+#FRONTEND
+
+sudo docker build -t frontend .
+sudo docker run -p 5000:5000 frontend
+
+#BACKEND
+
+sudo docker build -t backend .
+sudo docker run -p 8000:8000 backend
