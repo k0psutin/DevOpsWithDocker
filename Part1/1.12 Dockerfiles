@@ -3,6 +3,7 @@
 FROM node
 
 EXPOSE 5000
+
 WORKDIR /app
 COPY . /app
 
