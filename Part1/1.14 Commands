@@ -1,0 +1,15 @@
+# I had to delete credentials.yml.enc from /config and re-create credentials with:
+k0psutin@k0psutin:~/Documents/DevOps/practice/rails$ sudo docker run --rm -it -v ${PWD}:/app -e EDITOR=vim rails bin/rails credentials:edit 
+New credentials encrypted and saved.
+
+# And then i had to start the server with the new secret key code:
+k0psutin@k0psutin:~/Documents/DevOps/practice/rails$ sudo docker run -it -p 3000:3000 -e SECRET_KEY_BASE=4529284730ecf6e5b85c54be3fd10029 rails
+=> Booting Puma
+=> Rails 5.2.2.1 application starting in production 
+=> Run `rails server -h` for more startup options
+Puma starting in single mode...
+* Version 3.12.0 (ruby 2.6.0-p0), codename: Llamas in Pajamas
+* Min threads: 5, max threads: 5
+* Environment: production
+* Listening on tcp://0.0.0.0:3000
+Use Ctrl-C to stop
