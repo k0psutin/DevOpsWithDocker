@@ -1,0 +1,2 @@
+k0psutin@k0psutin:~/Documents/DevOps/practice/spring$ sudo docker build -t spring .
+k0psutin@k0psutin:~/Documents/DevOps/practice/spring$ sudo docker run -p 8080:8080 spring
