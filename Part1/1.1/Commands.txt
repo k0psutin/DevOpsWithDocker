@@ -1,0 +1,13 @@
+k0psutin@k0psutin:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+6c3713ca1b99        nginx               "nginx -g 'daemon of…"   4 seconds ago       Up 2 seconds        80/tcp              goofy_dijkstra
+22f6e90ef4ce        nginx               "nginx -g 'daemon of…"   17 seconds ago      Up 15 seconds       80/tcp              modest_raman
+7b74a586fb96        nginx               "nginx -g 'daemon of…"   25 seconds ago      Up 24 seconds       80/tcp              keen_ellis
+k0psutin@k0psutin:~$ sudo docker stop 22f
+22f
+k0psutin@k0psutin:~$ sudo docker stop 7b7
+7b7
+k0psutin@k0psutin:~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
+6c3713ca1b99        nginx               "nginx -g 'daemon of…"   20 seconds ago      Up 18 seconds       80/tcp              goofy_dijkstra
+k0psutin@k0psutin:~$ 
