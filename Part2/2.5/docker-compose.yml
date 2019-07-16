@@ -3,6 +3,7 @@ version: '3.5'
 services:
         redis:
            image: redis
+           container_name: redis
            volumes:
              - ./data:/data
            entrypoint: redis-server --appendonly yes
