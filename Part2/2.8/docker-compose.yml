@@ -1,0 +1,50 @@
+version: '3.5'
+
+services:
+
+        redis:
+           image: redis
+           container_name: redis
+           volumes:
+             - ./data:/data
+           entrypoint: redis-server --appendonly yes
+           ports:
+             - 6379:6379
+           restart: unless-stopped
+
+        postgres:
+           image: postgres
+           restart: unless-stopped
+           environment:
+                  - POSTGRES_PASSWORD=mysecretpassword
+                   
+        backend:
+           build: backend-example-docker/.
+           container_name: backend
+           environment:
+                  - FRONT_URL=http://localhost:5000
+                  - REDIS=redis
+                  - REDIS_PORT=6379
+                  - DB_USERNAME=postgres
+                  - DB_PASSWORD=mysecretpassword
+                  - DB_NAME=postgres
+                  - DB_HOST=postgres
+           ports:
+              - 8000:8000
+           entrypoint: npm start
+
+        frontend:
+           build: frontend-example-docker/.
+           container_name: frontend
+           environment:
+                  - API_URL=http://localhost:8000
+           ports:
+             - 5000:5000
+           entrypoint: npm start
+
+        nginx:
+           image: nginx
+           volumes:
+             - ./nginx.conf:/etc/nginx/nginx.conf
+           ports:
+             - 80:80
