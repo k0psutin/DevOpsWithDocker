@@ -1,0 +1,10 @@
+https://cloud.docker.com/repository/registry-1.docker.io/k0psutin/openjdk8-alpine
+
+#Starting point for our image. We use OpenJDK version 8 for our image. Alpine is a very small and light Linux distribution.
+FROM openjdk:8-jdk-alpine
+
+#With Alpine, we can install few programs into our image usin Alpines apk.
+RUN apk add --no-cache git curl tar bash procps
+
+#Copy hello_world.jar example program to the image. We can run the program by running the image with 'docker run -it <image> bash' and using the terminal.
+COPY hello_world.jar hello_world.jar
