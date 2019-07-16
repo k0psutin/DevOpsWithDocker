@@ -11,8 +11,8 @@ services:
            restart: unless-stopped
 
         backend:
-           image: backend
-           build: backend/.
+           build: backend-example-docker/.
+           container_name: backend
            environment:
                   - FRONT_URL=http://localhost:5000
                   - REDIS=redis
@@ -22,8 +22,8 @@ services:
            entrypoint: npm start
 
         frontend:
-           image: frontend
-           build: frontend/.
+           build: frontend-example-docker/.
+           container_name: frontend
            environment:
                   - API_URL=http://localhost:8000
            ports:
