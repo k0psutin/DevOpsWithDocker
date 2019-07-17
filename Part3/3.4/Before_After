@@ -1,0 +1,9 @@
+# FROM ubuntu:16.04
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+app_backend         latest              25a9d5b706e9        37 minutes ago      324MB
+app_frontend        latest              230a6a5e24f6        38 minutes ago      420MB
+
+# FROM node:alpine
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+app_backend         latest              758ec1423d2b        4 minutes ago       142MB
+app_frontend        latest              b0959e679fab        5 minutes ago       239MB
