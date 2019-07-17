@@ -1,0 +1,9 @@
+k0psutin@k0psutin:~/Documents/DevOps/practice/app$ sudo docker images
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+app_backend                            latest              10eb8c89fac5        About an hour ago   1.06GB
+app_frontend                           latest              ed5419050cbb        About an hour ago   1.16GB
+
+k0psutin@k0psutin:~/Documents/DevOps/practice/app$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+app_backend         latest              cf05d4ad94ec        About a minute ago   324MB
+app_frontend        latest              213cae17d4fc        3 minutes ago        420MB
