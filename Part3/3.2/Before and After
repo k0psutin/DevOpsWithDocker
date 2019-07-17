@@ -1,0 +1,9 @@
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+taskinen/yle-dl     latest              4f55d77a25dd        2 months ago         310MB
+
+# Original above
+# Opitmized below
+
+yle-dl              latest              a95ebe784067        About a minute ago   286MB
+
+I was able to shave ~20mb. 
