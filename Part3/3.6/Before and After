@@ -1,4 +1,6 @@
-#Before optimizing
+#Before optimizing 
+
+#Image size around 1.9gb. (Woahh.. i know right..)
 
 FROM ruby:2.6.0
 
