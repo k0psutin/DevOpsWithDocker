@@ -27,7 +27,7 @@ CMD ["rails", "s", "-e", "production"]
 # After
 
 # Note: Multistage build with non-root user.
-# Image size: 220mb.
+# Image size: 221mb.
 
 FROM ruby:2.6.0-alpine AS builder
 
