@@ -66,10 +66,10 @@ COPY --from=builder /app /app
 
 WORKDIR /app
 
-RUN rake assets:precompile && chown -R app:app /app
+RUN rake assets:precompile && rails db:migrate && chown -R app:app /app
 
 USER app
 
 EXPOSE 3000
 
-CMD bin/rails db:migrate && ./bin/rails s -e production
+CMD ./bin/rails s -e production
