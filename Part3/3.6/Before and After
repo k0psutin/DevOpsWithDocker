@@ -26,29 +26,50 @@ CMD ["rails", "s", "-e", "production"]
 
 # After
 
-FROM ruby:2.6.0
+# Note: Multistage build with non-root user.
+# Image size: 220mb.
+
+FROM ruby:2.6.0-alpine AS builder
+
+ENV RAILS_ENV=production 
+ENV RAILS_LOG_TO_STDOUT=true
+
+RUN apk add --update \
+    build-base \
+    sqlite-dev \
+    nodejs \
+    tzdata \
+    bash && \
+    gem install bundler && \
+    rm -rf /var/cache/apk/* /usr/local/bundle/cache/*.gem
 
 WORKDIR /app
+COPY Gemfile* /app/
+
+RUN bundle install
+
+FROM ruby:2.6.0-alpine AS production
+
+ENV RAILS_ENV=production 
+ENV RAILS_LOG_TO_STDOUT=true
+
+RUN apk add --update \
+    sqlite-dev \
+    nodejs \
+    tzdata && \
+    addgroup -S app && \
+    adduser -S -G app app
+
 COPY . /app
+COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
+COPY --from=builder /app /app
 
-ENV RAILS_ENV=production
-ENV RAILS_LOG_TO_STDOU=true
-ENV EDITOR=vim
+WORKDIR /app
 
-RUN useradd -m ruby && \
-    chown -hR ruby /app && \
-    apt-get update && apt-get install -y vim curl && \
-    curl -sL https://deb.nodesource.com/setup_10.x | bash && \
-    apt-get install -y nodejs && \
-    gem install bundler && \
-    bundle install && \
-    apt-get purge -y --auto-remove curl && \
-    rails db:migrate && \
-    rake assets:precompile && \
-    rm -rf /var/lib/apt/lists/*
+RUN rake assets:precompile && chown -R app:app /app
 
-USER ruby
+USER app
 
 EXPOSE 3000
 
-CMD ["rails", "s", "-e", "production"]
+CMD bin/rails db:migrate && ./bin/rails s -e production
