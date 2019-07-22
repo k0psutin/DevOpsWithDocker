@@ -2,7 +2,7 @@
 
 https://github.com/k0psutin/doge
 
-Webhook in branch *webhook*, automatically build an image to https://cloud.docker.com/u/k0psutin/repository/docker/k0psutin/sample_project in event of change
+Webhook in branch *webhook*, automatically builds an image to https://cloud.docker.com/u/k0psutin/repository/docker/k0psutin/sample_project in event of change
 
 
 ### Steps:
