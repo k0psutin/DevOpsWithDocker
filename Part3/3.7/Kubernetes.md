@@ -13,6 +13,7 @@ In **Kubernetes**, the host machine will serve as a *master node*, controlling *
 ![Kubernetes_overview](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kubernetes.png/660px-Kubernetes.png)          
 *source https://en.wikipedia.org/wiki/Kubernetes*
 
+
 **Kubernetes** will help you organize a large scale app because you can control all containers from a single CLI. Update coming? No problem, you can easily update all containers from **Kubernetes CLI**, and roll them onto containers automatically, without any downtime. All the pods can also share the same storage (volumes), so none of the data is lost if the pods stop functioning.
 
 Wait, what about **Docker Swarm**?
