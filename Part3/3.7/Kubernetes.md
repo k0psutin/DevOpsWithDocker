@@ -17,7 +17,7 @@ In **Kubernetes**, the host machine will serve as a *master node*, controlling *
 
 Wait, what about **Docker Swarm**?
 
-**Docker Swarm** is the official tool to organize **Docker** containers. Where **Kubernetes** is bit complex to install and use, **Docker Swarm** is more user friendly, and has a lot of documentation on the Docker homepage. Both application are similar, and it is up to you to decide which one you will use.
+**Docker Swarm** is the official tool to organize **Docker** containers. Where **Kubernetes** is bit complex to install and use, **Docker Swarm** is more user friendly, and has a lot of documentation on the Docker homepage. Both applications are similar, and it is up to you to decide which one you will use.
 
 
 
